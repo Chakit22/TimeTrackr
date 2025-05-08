@@ -11,6 +11,7 @@ import {
   preloadSounds,
 } from "@/lib/sounds";
 import { speakText } from "@/lib/utils";
+import { NotificationInitializer } from "./notification-initializer";
 
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -244,6 +245,9 @@ export function TaskList() {
           </div>
         )}
       </div>
+
+      {/* Add notification initializer */}
+      <NotificationInitializer />
     </div>
   );
 }
