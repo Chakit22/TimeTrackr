@@ -150,7 +150,8 @@ export function TaskList() {
           <Card className="p-6 text-center">
             <div className="space-y-4">
               <p className="text-slate-700 dark:text-slate-300">
-                You have {tasks.length} task{tasks.length > 1 ? 's' : ''} ready to start.
+                You have {tasks.length} task{tasks.length > 1 ? "s" : ""} ready
+                to start.
               </p>
               <Button onClick={() => startTask(0)} className="mt-4">
                 Start All Tasks
