@@ -36,10 +36,7 @@ export function TaskList() {
     // Reset all tasks completed flag when adding a new task
     setAllTasksCompleted(false);
 
-    // Automatically start the first task if no task is currently active
-    if (currentTaskIndex === null) {
-      setCurrentTaskIndex(tasks.length); // Will be the index of the newly added task
-    }
+    // Don't auto-start tasks anymore
   };
 
   const editTask = (updatedTask: Task) => {
@@ -149,6 +146,17 @@ export function TaskList() {
             }
             onComplete={handleTaskComplete}
           />
+        ) : tasks.length > 0 ? (
+          <Card className="p-6 text-center">
+            <div className="space-y-4">
+              <p className="text-slate-700 dark:text-slate-300">
+                You have {tasks.length} task{tasks.length > 1 ? 's' : ''} ready to start.
+              </p>
+              <Button onClick={() => startTask(0)} className="mt-4">
+                Start All Tasks
+              </Button>
+            </div>
+          </Card>
         ) : (
           <Card className="p-6 text-center">
             <p className="text-slate-700 dark:text-slate-300">
